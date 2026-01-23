@@ -27,7 +27,7 @@ namespace InstantBuy
     {
         private const string modGUID = "nexor.InstantBuy";
         private const string modName = "InstantBuy";
-        private const string modVersion = "0.0.6";
+        private const string modVersion = "0.0.8";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -48,7 +48,7 @@ namespace InstantBuy
             }
             offset = Config.Bind<float>("InstantBuy Config", "offset 偏移", 0.2f, "Controls the offset of where purchased items are generated 控制购买物品生成位置的偏移");
             ignored_item = Config.Bind<string>("InstantBuy Config", "ignored_item 不会触发该mod的物品名单", "-1,", "Numbers are separated by commas, e.g. -1,0,1,2    -1 is used as a placeholder, please go to the mod introduction page in the ThunderStore to check which number corresponds to which item. " + "数字使用逗号隔开，如-1,0,1,2    -1是用来占位的，具体哪个数字对应哪个物品请到雷电商城的mod介绍页查看");
-            companyOnly = Config.Bind<bool>("InstantBuy Config", "Company Only", true, "Restricts this mod to only Company Moons (Gordion, Galetry and Oxyde)");
+            companyOnly = Config.Bind<bool>("InstantBuy Config", "Company Only", true, "Restricts this mod to only Company Moons (Gordion & Galetry)");
             Logger = base.Logger;
             harmony.PatchAll();
             Logger.LogInfo("InstantBuy " + modVersion + " loaded.");
@@ -68,7 +68,7 @@ namespace InstantBuy
                 NetworkManager networkManager = StartOfRound.Instance.localPlayerController.NetworkManager;
                 if (!networkManager.IsServer) return;
                 bool isCompanyMoon = false;
-                if (StartOfRound.Instance.currentLevel.PlanetName == "CompanyBuildingLevel" || StartOfRound.Instance.currentLevel.PlanetName == "GaletryLevel" || StartOfRound.Instance.currentLevel.PlanetName == "OxydeLevel")
+                if (StartOfRound.Instance.currentLevel.PlanetName == "CompanyBuildingLevel" || StartOfRound.Instance.currentLevel.PlanetName == "GaletryLevel")
                 {
                     isCompanyMoon = true;
                     Logger.LogInfo("Company Moon + Config option detected");
@@ -97,7 +97,7 @@ namespace InstantBuy
                 if (!networkManager.IsServer) return;
 
                 bool isCompanyMoon = false;
-                if (StartOfRound.Instance.currentLevel.PlanetName == "Gordion" || StartOfRound.Instance.currentLevel.PlanetName == "Galetry" || StartOfRound.Instance.currentLevel.PlanetName == "Oxyde")
+                if (StartOfRound.Instance.currentLevel.PlanetName == "Gordion" || StartOfRound.Instance.currentLevel.PlanetName == "Galetry")
                 {
                     isCompanyMoon = true;
                     Logger.LogInfo("Company Moon + Config option detected");
