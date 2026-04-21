@@ -27,7 +27,7 @@ namespace InstantBuy
     {
         private const string modGUID = "nexor.InstantBuy";
         private const string modName = "InstantBuy";
-        private const string modVersion = "0.0.9";
+        private const string modVersion = "0.1.0";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
