@@ -35,3 +35,9 @@ C:\Users\Zeta\source\repos\InstantBuy\InstantBuy\obj\Debug\InstantBuy.csproj.Cor
 C:\Users\Zeta\source\repos\InstantBuy\InstantBuy\obj\Debug\InstantBuy.dll
 C:\Users\Zeta\source\repos\InstantBuy\InstantBuy\obj\Debug\InstantBuy.pdb
 C:\Users\Zeta\source\repos\InstantBuy\InstantBuy\obj\Debug\InstantBuy.csproj.Up2Date
+C:\Users\Zeta\repos\InstantBuy\InstantBuy\bin\Debug\InstantBuy.dll
+C:\Users\Zeta\repos\InstantBuy\InstantBuy\bin\Debug\InstantBuy.pdb
+C:\Users\Zeta\repos\InstantBuy\InstantBuy\obj\Debug\InstantBuy.csproj.AssemblyReference.cache
+C:\Users\Zeta\repos\InstantBuy\InstantBuy\obj\Debug\InstantBuy.csproj.CoreCompileInputs.cache
+C:\Users\Zeta\repos\InstantBuy\InstantBuy\obj\Debug\InstantBuy.dll
+C:\Users\Zeta\repos\InstantBuy\InstantBuy\obj\Debug\InstantBuy.pdb

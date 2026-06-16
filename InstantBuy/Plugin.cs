@@ -27,7 +27,7 @@ namespace InstantBuy
     {
         private const string modGUID = "nexor.InstantBuy";
         private const string modName = "InstantBuy";
-        private const string modVersion = "0.1.0";
+        private const string modVersion = "0.1.1";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -68,14 +68,14 @@ namespace InstantBuy
                 NetworkManager networkManager = StartOfRound.Instance.localPlayerController.NetworkManager;
                 if (!networkManager.IsServer) return;
                 bool isCompanyMoon = false;
-                if (StartOfRound.Instance.currentLevel.PlanetName == "Gordion" || StartOfRound.Instance.currentLevel.PlanetName == "Galetry")
+                if (StartOfRound.Instance.currentLevel.name == "CompanyBuildingLevel" || StartOfRound.Instance.currentLevel.name == "GaletryLevel")
                 {
                     isCompanyMoon = true;
                     Logger.LogInfo("Company Moon + Config option detected");
                 }
                 else
                 {
-                    Logger.LogInfo("Skipping prevention of instant items since the current level is: " + StartOfRound.Instance.currentLevel.PlanetName);
+                    Logger.LogInfo("Skipping prevention of instant items since the current unity name is: " + StartOfRound.Instance.currentLevel.name);
                 }
                 if (Instance.companyOnly.Value && !isCompanyMoon) return; //If config says only Company, and its not the company, exit
                 List<int> boughtItems = __instance.orderedItemsFromTerminal;
@@ -97,14 +97,14 @@ namespace InstantBuy
                 if (!networkManager.IsServer) return;
 
                 bool isCompanyMoon = false;
-                if (StartOfRound.Instance.currentLevel.PlanetName == "Gordion" || StartOfRound.Instance.currentLevel.PlanetName == "Galetry")
+                if (StartOfRound.Instance.currentLevel.name == "CompanyBuildingLevel" || StartOfRound.Instance.currentLevel.name == "GaletryLevel")
                 {
                     isCompanyMoon = true;
                     Logger.LogInfo("Company Moon + Config option detected");
                 }
                 else
                 {
-                    Logger.LogInfo("Skipping prevention of instant items since the current level is: " + StartOfRound.Instance.currentLevel.PlanetName);
+                    Logger.LogInfo("Skipping prevention of instant items since the unity name is: " + StartOfRound.Instance.currentLevel.name);
                 }
                 if (Instance.companyOnly.Value && !isCompanyMoon) return; //If config says only Company, and its not the company, exit
                 List<int> boughtItems = __instance.orderedItemsFromTerminal;
